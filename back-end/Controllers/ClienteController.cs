@@ -1,5 +1,6 @@
 ﻿using back_end.IServices;
 using back_end.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace back_end.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
     {
@@ -20,37 +20,46 @@ namespace back_end.Controllers
         {
             _clienteService = clienteService;
         }
-       
-        [HttpGet]
-        public List<Cliente> ObterTodos()
+
+        [EnableCors]
+        [HttpGet("api/listaClientes")]
+        public IActionResult ObterTodos()
         {
-            return _clienteService.ObterTodos();
+            IEnumerable<Cliente> listaComResultado = _clienteService.ObterTodos();
+            return new JsonResult(listaComResultado);
         }
 
-        [HttpGet("{guid}", Name="Get")]
-        public Cliente ObterEspecifico(string guid)
+        [EnableCors]
+        [HttpGet("api/cliente/{guid}")]
+        public IActionResult ObterEspecifico(string guid)
         {
-            return _clienteService.ObterEspecifico(guid);
+            Cliente Resultado = _clienteService.ObterEspecifico(guid);
+            return new JsonResult(Resultado);
         }
 
 
-       
-        [HttpPost]
-        public List<Cliente> Salvar ([FromBody] Cliente cliente)
+        [EnableCors]
+        [HttpPost("api/salvarCliente")]
+        public IActionResult Salvar ([FromBody] Cliente cliente)
         {
-            return _clienteService.Salvar(cliente);
+            IEnumerable<Cliente> listaComResultado = _clienteService.Salvar(cliente);
+            return new JsonResult(listaComResultado);
         }
 
-        [HttpPut]
-        public List<Cliente> Modificar([FromBody] Cliente cliente)
+        [EnableCors]
+        [HttpPut("api/modificarCliente/{guid}")]
+        public IActionResult Modificar([FromBody] Cliente cliente)
         {
-            return _clienteService.Modificar(cliente);
+            IEnumerable<Cliente> listaComResultado = _clienteService.Modificar(cliente);
+            return new JsonResult(listaComResultado);
         }
 
-        [HttpDelete("{guid}")]
-        public List<Cliente> Deletar(string guid)
+        [EnableCors]
+        [HttpDelete("api/deletarCliente/{guid}")]
+        public IActionResult Deletar(string guid)
         {
-            return _clienteService.Deletar(guid);
+            IEnumerable<Cliente> listaComResultado = _clienteService.Deletar(guid);
+            return new JsonResult(listaComResultado);
         }
 
 
