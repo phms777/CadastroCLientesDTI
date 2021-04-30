@@ -8,6 +8,7 @@ import { CriarClientesComponent } from './criar-clientes/criar-clientes.componen
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { EditarClientesComponent } from './editar-clientes/editar-clientes.component';
 import { DetalheClienteComponent } from './detalhe-cliente/detalhe-cliente.component';
+import { ClienteService } from 'src/Services/ClienteService.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { DetalheClienteComponent } from './detalhe-cliente/detalhe-cliente.compo
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

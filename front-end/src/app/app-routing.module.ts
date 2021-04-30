@@ -4,17 +4,26 @@ import { CriarClientesComponent } from './criar-clientes/criar-clientes.componen
 import { DetalheClienteComponent } from './detalhe-cliente/detalhe-cliente.component';
 import { EditarClientesComponent } from './editar-clientes/editar-clientes.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: 'cliente', pathMatch: 'full' },
-  { path: 'clientes', component: ListaClientesComponent },
-  { path: 'adicionar', component: CriarClientesComponent },
-  { path: 'modificar/:guid', component: EditarClientesComponent },
-  { path: 'detalhe/:guid', component: DetalheClienteComponent },
-];
+import { AppComponent} from './app.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+      RouterModule.forRoot([
+          {
+              path: '', component: AppComponent,
+              children: [
+                  // Rotas novas devem ser colocadas aqui:
+                  { path: '', component: ListaClientesComponent },
+                  { path: '', redirectTo: 'clientes', pathMatch: 'full' },
+                  { path: 'clientes', component: ListaClientesComponent },
+                  { path: 'adicionar', component: CriarClientesComponent },
+                  { path: 'modificar/:guid', component: EditarClientesComponent },
+                  { path: 'detalhe/:guid', component: DetalheClienteComponent },
+              ]
+          },
+      ], { scrollPositionRestoration: 'enabled' })
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
