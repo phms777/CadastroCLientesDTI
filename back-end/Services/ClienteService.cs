@@ -2,7 +2,9 @@
 using back_end.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace back_end.Services
@@ -12,30 +14,46 @@ namespace back_end.Services
         List<Cliente> _clientes = new List<Cliente>();
         public List<Cliente> Deletar(string guidCliente)
         {
+            string jsonString = File.ReadAllText("DataBase/ClientesDTI.json");
+            _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
             _clientes.RemoveAll(x => x.guid == guidCliente);
+            jsonString = JsonSerializer.Serialize(_clientes);
+            File.WriteAllText("DataBase/ClientesDTI.json", jsonString);
             return _clientes;
         }
 
         public List<Cliente> Modificar(Cliente cliente)
         {
-            Cliente tempCliente = _clientes.FirstOrDefault(x => x.guid == cliente.guid);
-            tempCliente = cliente;
+            string jsonString = File.ReadAllText("DataBase/ClientesDTI.json");
+            _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
+            _clientes.RemoveAll(x => x.guid == cliente.guid);
+            _clientes.Add(cliente);
+            jsonString = JsonSerializer.Serialize(_clientes);
+            File.WriteAllText("DataBase/ClientesDTI.json", jsonString);
             return _clientes;
         }
 
         public Cliente ObterEspecifico(string guidCliente)
         {
+            string jsonString = File.ReadAllText("DataBase/ClientesDTI.json");
+            _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
             return _clientes.SingleOrDefault(x => x.guid == guidCliente);
         }
 
         public List<Cliente> ObterTodos()
         {
+            string jsonString = File.ReadAllText("DataBase/ClientesDTI.json");
+            _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
             return _clientes;
         }
 
         public List<Cliente> Salvar(Cliente cliente)
         {
+            string jsonString = File.ReadAllText("DataBase/ClientesDTI.json");
+            _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
             _clientes.Add(cliente);
+            jsonString = JsonSerializer.Serialize(_clientes);
+            File.WriteAllText("DataBase/ClientesDTI.json", jsonString);
             return _clientes;
         }
     }

@@ -42,6 +42,7 @@ namespace back_end
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+            services.AddScoped<IClienteService, ClienteService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -73,8 +74,8 @@ namespace back_end
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
-                RequestPath = new PathString("/Resources")
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"DataBase")),
+                RequestPath = new PathString("/DataBase")
             });
 
             app.UseRouting();
