@@ -28,9 +28,12 @@ export class DetalheClienteComponent implements OnInit {
 
   ngOnInit() {
     this.guid = this.route.snapshot.params['guid'];
-
     this.clienteService.obterClientePorGuid(this.guid)
-    .then(pData => this.cliente = pData)
+    .then(pData => this.carregarCliente(pData))
+  }
+
+  carregarCliente (pData: Cliente){
+    this.cliente = pData as Cliente;
   }
 
   irParaListaDeClientes() {

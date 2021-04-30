@@ -12,10 +12,7 @@ import { AppComponent} from './app.component';
           {
               path: '', component: AppComponent,
               children: [
-                  // Rotas novas devem ser colocadas aqui:
-                  { path: '', component: ListaClientesComponent },
-                  { path: '', redirectTo: 'clientes', pathMatch: 'full' },
-                  { path: 'clientes', component: ListaClientesComponent },
+                { path: 'clientes', component: ListaClientesComponent },
                   { path: 'adicionar', component: CriarClientesComponent },
                   { path: 'modificar/:guid', component: EditarClientesComponent },
                   { path: 'detalhe/:guid', component: DetalheClienteComponent },

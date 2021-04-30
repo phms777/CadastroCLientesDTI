@@ -33,6 +33,6 @@ export class ClienteService {
   }
 
   deletarCliente(guid: string) : Promise<Cliente[]> {
-      return this.http.delete<Cliente[]>(this.url + 'deletarCliente'+guid).toPromise();
+      return this.http.delete<Cliente[]>(this.url + 'deletarCliente/'+guid).toPromise();
   }
 }

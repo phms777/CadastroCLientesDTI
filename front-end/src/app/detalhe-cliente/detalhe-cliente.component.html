@@ -1,20 +1,25 @@
 <h2>Detalhe do cliente</h2>
 <hr/>
-<div *ngIf="cliente">
+<div *ngIf="cliente.guid!=''">
   <div>
-    <label><b>Nome </b></label> {{cliente.Nome}}
+    <label><b>Nome </b></label>
+    <span>{{cliente.Nome}}</span>
   </div>
   <div>
-    <label><b>CPF </b></label> {{cliente.CPF}}
+    <label><b>CPF </b></label>
+    <span>{{cliente.CPF}}</span>
   </div>
   <div>
-    <label><b>Telefone </b></label> {{cliente.Celular}}
+    <label><b>Telefone </b></label>
+    <span>{{cliente.Celular}}</span>
   </div>
   <div>
-    <label><b>E-mail </b></label> {{cliente.Email}}
+    <label><b>E-mail </b></label>
+    <span>{{cliente.Email}}</span>
   </div>
   <div>
-    <label><b>Endereço </b></label> {{cliente.Endereco}}
+    <label><b>Endereço </b></label>
+    <span>{{cliente.Endereco}}</span>
   </div>
 </div>
 <br>

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Cliente from 'src/Models/Cliente';
 import { ClienteService } from 'src/Services/ClienteService.service';
@@ -9,7 +8,7 @@ import { ClienteService } from 'src/Services/ClienteService.service';
   templateUrl: './lista-clientes.component.html',
   styleUrls: ['./lista-clientes.component.css']
 })
-export class ListaClientesComponent implements OnInit {
+export class ListaClientesComponent implements OnInit{
 
   clientes: Cliente[];
 
@@ -26,13 +25,19 @@ export class ListaClientesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.carregarListaDeClientes();
+    this.solicitarListaDeClientes();
   }
 
-  carregarListaDeClientes() {
+  solicitarListaDeClientes() {
     this.clienteService.obterListaDeClientes()
-      .then(Data => this.clientes=Data);
+      .then(Data => this.carregarListaDeClientes(Data));
   }
+
+  carregarListaDeClientes(pData: Cliente[]) {
+    this.clientes = pData as Cliente [];
+  }
+
+
 
   apagarCliente(guid: string) {
     this.clienteService.deletarCliente(guid)
