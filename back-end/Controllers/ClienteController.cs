@@ -47,7 +47,7 @@ namespace back_end.Controllers
         }
 
         [EnableCors]
-        [HttpPut("api/modificarCliente/{guid}")]
+        [HttpPut("api/modificarCliente")]
         public IActionResult Modificar([FromBody] Cliente cliente)
         {
             IEnumerable<Cliente> listaComResultado = _clienteService.Modificar(cliente);
