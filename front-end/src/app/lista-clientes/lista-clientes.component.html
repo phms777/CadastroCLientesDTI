@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de Clientes</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{cliente.Nome}}</td>
+          <td>{{cliente.CPF}}</td>
+          <td>{{cliente.Celular}}</td>
+          <td><button (click)="apagarCliente(cliente.guid)" class="btn btn-danger">Apagar</button>
+              <button (click)="detalhesDoCliente(cliente.guid)" class="btn btn-info" style="margin-left: 10px">Mais Informações</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
