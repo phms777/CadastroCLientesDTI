@@ -19,11 +19,11 @@ export class CriarClientesComponent implements OnInit {
   constructor(private clienteService: ClienteService, private router: Router) {
     this.cliente = {
       guid: '',
-      Nome: '',
-      Endereco: '',
-      Celular: '',
-      Email: '',
-      CPF: ''
+      nome: '',
+      endereco: '',
+      celular: '',
+      email: '',
+      cpf: ''
     };
    }
 

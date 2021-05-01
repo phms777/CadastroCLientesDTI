@@ -20,11 +20,11 @@ export class EditarClientesComponent implements OnInit {
       this.guid='';
       this.cliente = {
         guid: '',
-        Nome: '',
-        Endereco: '',
-        Celular: '',
-        Email: '',
-        CPF: ''
+        nome: '',
+        endereco: '',
+        celular: '',
+        email: '',
+        cpf: ''
       };
     }
 

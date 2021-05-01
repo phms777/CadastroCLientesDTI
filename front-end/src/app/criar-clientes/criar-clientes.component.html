@@ -3,27 +3,27 @@
   <form (ngSubmit)="aoSalvar()">
     <div class="form-group">
       <label for="name">Nome</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="cliente.Nome" name="firstName">
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="cliente.nome" name="firstName">
     </div>
 
     <div class="form-group">
       <label for="name">CPF</label>
-      <input type="text" class="form-control" id="cpf" required [(ngModel)]="cliente.CPF" name="cpf">
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="cliente.cpf" name="cpf">
     </div>
 
     <div class="form-group">
       <label for="name">Telefone</label>
-      <input type="text" class="form-control" id="telefone" required [(ngModel)]="cliente.Celular" name="celular">
+      <input type="text" class="form-control" id="telefone" required [(ngModel)]="cliente.celular" name="celular">
     </div>
 
     <div class="form-group">
       <label for="name">E-mail</label>
-      <input type="text" class="form-control" id="email" required [(ngModel)]="cliente.Email" name="email">
+      <input type="text" class="form-control" id="email" required [(ngModel)]="cliente.email" name="email">
     </div>
 
     <div class="form-group">
       <label for="name">Endereço</label>
-      <input type="text" class="form-control" id="endereco" required [(ngModel)]="cliente.Endereco" name="endereco">
+      <input type="text" class="form-control" id="endereco" required [(ngModel)]="cliente.endereco" name="endereco">
     </div>
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>

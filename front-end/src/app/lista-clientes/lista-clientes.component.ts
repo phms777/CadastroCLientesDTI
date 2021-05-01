@@ -15,11 +15,11 @@ export class ListaClientesComponent implements OnInit{
   constructor(private clienteService: ClienteService, private router: Router) {
     this.clientes = [{
       guid: '',
-      Nome: '',
-      Endereco: '',
-      Celular: '',
-      Email: '',
-      CPF: ''
+      nome: '',
+      endereco: '',
+      celular: '',
+      email: '',
+      cpf: ''
     }];
 
   }
