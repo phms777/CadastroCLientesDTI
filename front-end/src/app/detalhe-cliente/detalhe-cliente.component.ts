@@ -39,4 +39,8 @@ export class DetalheClienteComponent implements OnInit {
   irParaListaDeClientes() {
     this.router.navigate(['/clientes']);
   }
+
+  editarCliente(guid: string){
+    this.router.navigate(['modificar', guid]);
+  }
 }

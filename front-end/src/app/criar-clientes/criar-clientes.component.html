@@ -1,4 +1,4 @@
-<h3>Create Employee</h3>
+<h3>Adicionar Clientes</h3>
 <div [hidden]="enviado" style="width: 400px;">
   <form (ngSubmit)="aoSalvar()">
     <div class="form-group">
@@ -8,6 +8,7 @@
 
     <div class="form-group">
       <label for="name">CPF</label>
+      <br>
       <input type="text" class="form-control" id="cpf" required [(ngModel)]="cliente.cpf" name="cpf">
     </div>
 

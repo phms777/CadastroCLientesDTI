@@ -44,11 +44,25 @@ export class CriarClientesComponent implements OnInit {
   irParaListaDeClientes() {
     this.router.navigate(['/clientes']);
   }
+
+  formatarCPF(cpf: any) {
+    const elementoAlvo = cpf
+    const cpfAtual = cpf.value
+
+    let cpfAtualizado;
+
+    cpfAtualizado = cpfAtual.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, function( argumento1: any, argumento2: any, argumento3: any, argumento4: any ) {
+            return argumento1 + '.' + argumento2 + '.' + argumento3 + '-' + argumento4;
+    })
+    elementoAlvo.value = cpfAtualizado;
+    }
 }
 
 function obterNovaGuid(): string {
   return Guid.create().toString();
 }
+
+
 
 
 

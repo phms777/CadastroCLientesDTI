@@ -17,8 +17,9 @@
           <td>{{cliente.nome}}</td>
           <td>{{cliente.cpf}}</td>
           <td>{{cliente.celular}}</td>
-          <td><button (click)="apagarCliente(cliente.guid)" class="btn btn-danger">Apagar</button>
+          <td>
               <button (click)="detalhesDoCliente(cliente.guid)" class="btn btn-info" style="margin-left: 10px">Mais Informações</button>
+              <button (click)="apagarCliente(cliente.guid)" class="btn btn-danger">Apagar</button>
           </td>
         </tr>
       </tbody>

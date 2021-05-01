@@ -29,7 +29,7 @@ export class ClienteService {
   }
 
   modificarCliente (cliente : Cliente) : Promise<Cliente[]> {
-    return this.http.post<Cliente[]>(this.url + 'modificarCliente', cliente, httpOptions).toPromise();
+    return this.http.put<Cliente[]>(this.url + 'modificarCliente', cliente, httpOptions).toPromise();
   }
 
   deletarCliente(guid: string) : Promise<Cliente[]> {

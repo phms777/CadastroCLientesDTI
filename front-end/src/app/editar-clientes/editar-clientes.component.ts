@@ -37,7 +37,7 @@ export class EditarClientesComponent implements OnInit {
 
   editarCliente() {
     this.clienteService.modificarCliente(this.cliente)
-      .then(pData => this.irParaListaDeClientes())
+    .then(pData => this.irParaListaDeClientes());
   }
 
   aoSalvar() {
@@ -52,4 +52,6 @@ export class EditarClientesComponent implements OnInit {
   irParaListaDeClientes() {
     this.router.navigate(['/clientes']);
   }
+
+
 }

@@ -3,25 +3,35 @@
 <div *ngIf="cliente.guid!=''">
   <div>
     <label><b>Nome </b></label>
+    <br>
     <span>{{cliente.nome}}</span>
   </div>
+  <br>
   <div>
     <label><b>CPF </b></label>
+    <br>
     <span>{{cliente.cpf}}</span>
   </div>
+  <br>
   <div>
     <label><b>Telefone </b></label>
+    <br>
     <span>{{cliente.celular}}</span>
   </div>
+  <br>
   <div>
     <label><b>E-mail </b></label>
+    <br>
     <span>{{cliente.email}}</span>
   </div>
+  <br>
   <div>
     <label><b>Endereço </b></label>
+    <br>
     <span>{{cliente.endereco}}</span>
   </div>
 </div>
 <br>
 <br>
+<button (click)="editarCliente(cliente.guid)" class="btn btn-primary" style="margin-left: 10px">Editar</button>
 <button (click)="irParaListaDeClientes()" class="btn btn-primary">Fechar</button><br>

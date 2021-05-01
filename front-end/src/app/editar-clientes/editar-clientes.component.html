@@ -1,4 +1,4 @@
-<h3>Update Employee</h3>
+<h3>Modificar Cliente</h3>
 <div [hidden]="enviado" style="width: 400px;">
   <form (ngSubmit)="aoSalvar()">
     <div class="form-group">
@@ -26,6 +26,6 @@
       <input type="text" class="form-control" id="endereco" required [(ngModel)]="cliente.endereco" name="endereco">
     </div>
 
-    <button type="submit" class="btn btn-success">Salvar</button>
+    <button type="submit" class="btn btn-success" (click)="editarCliente()">Salvar</button>
   </form>
 </div>
