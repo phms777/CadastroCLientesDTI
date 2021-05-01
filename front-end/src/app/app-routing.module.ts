@@ -9,15 +9,11 @@ import { AppComponent} from './app.component';
 @NgModule({
   imports: [
       RouterModule.forRoot([
-          {
-              path: '', component: AppComponent,
-              children: [
-                { path: 'clientes', component: ListaClientesComponent },
-                  { path: 'adicionar', component: CriarClientesComponent },
-                  { path: 'modificar/:guid', component: EditarClientesComponent },
-                  { path: 'detalhe/:guid', component: DetalheClienteComponent },
-              ]
-          },
+        { path: '', redirectTo: 'clientes', pathMatch: 'full' },
+        { path: 'clientes', component: ListaClientesComponent },
+        { path: 'adicionar', component: CriarClientesComponent },
+        { path: 'modificar/:guid', component: EditarClientesComponent },
+        { path: 'detalhe/:guid', component: DetalheClienteComponent },
       ], { scrollPositionRestoration: 'enabled' })
   ],
   exports: [RouterModule]
