@@ -19,27 +19,10 @@ Tela de adição de um novo cliente à base de dados
 Tela de clientes com um novo cliente cadastrado
 ![image](https://user-images.githubusercontent.com/48165096/116768015-185bdb00-aa0a-11eb-88ac-00976c8a9936.png)
 
+![image](https://user-images.githubusercontent.com/48165096/116768283-d5026c00-aa0b-11eb-9b43-9aa57d4932e8.png)
 
-O projeto segue a seguinte estrutura de pastas:
 
-CadastroClienteDTI
-  back-end 
-    Controllers //onde se encontra os endpoints da API
-    DataBase // rotinas de arquivamento e leitura das informações em arquivo json
-    IServices //Interface do serviço 
-    Models // Modelo da entidade cliente
-    Services // Serviço com os métodos principais da CRUD
-    
-  front-end
-    src
-      app
-        criar-clientes //componente de criação de clientes
-        editar-clientes //componente de edição dos dados dos clientes
-        detalhar-clientes //componente de detalhamento dos dados dos clientes
-        lista-cliente // componente principal com a listagem do cliente
-        
-      Models // Modelo da entidade cliente
-      Services // Serviço com os métodos de acesso http para o consumo da API
+
       
       
         
