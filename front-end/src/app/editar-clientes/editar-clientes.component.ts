@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Cliente from 'src/Models/Cliente';
 import { ClienteService } from 'src/Services/ClienteService.service';
@@ -40,12 +41,8 @@ export class EditarClientesComponent implements OnInit {
     .then(pData => this.irParaListaDeClientes());
   }
 
-  aoSalvar() {
+  aoSalvar(pFormulario: NgForm) {
     this.enviado = true;
-    this.salvar();
-  }
-
-  salvar() {
     this.editarCliente();
   }
 
