@@ -6,7 +6,7 @@
       <input type="text" class="form-control" id="nome" required [(ngModel)]="cliente.nome" #nome="ngModel" name="nome" placeholder="Nome Completo" required>
       <div *ngIf="!nome.valid && (nome.dirty || nome.touched)"  class="alert alert-danger">
         <div *ngIf="nome.errors">
-          Nome é obrigatório
+          Nome é obrigatório pra gente começar um relacionamento!
         </div>
       </div>
     </div>
@@ -50,6 +50,6 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Salvar</button>
   </form>
 </div>
