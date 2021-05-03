@@ -35,13 +35,23 @@ export class ListaClientesComponent implements OnInit{
 
   carregarListaDeClientes(pData: Cliente[]) {
     this.clientes = pData as Cliente [];
+    if (this.clientes.length==0){
+      this.clientes = [{
+        guid: '',
+        nome: '',
+        endereco: '',
+        celular: '',
+        email: '',
+        cpf: ''
+      }];
+    }
   }
 
 
 
   apagarCliente(guid: string) {
     this.clienteService.deletarCliente(guid)
-      .then(Data => this.clientes=Data);
+      .then(Data => this.carregarListaDeClientes(Data));
   }
 
   detalhesDoCliente(guid: string){

@@ -41,7 +41,7 @@ export class EditarClientesComponent implements OnInit {
     .then(pData => this.irParaListaDeClientes());
   }
 
-  aoSalvar(pFormulario: NgForm) {
+  aoSalvar() {
     this.enviado = true;
     this.editarCliente();
   }

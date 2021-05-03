@@ -1,6 +1,6 @@
 <h3>Modificar Cliente</h3>
 <div [hidden]="enviado" style="width: 400px;">
-  <form #formulario="ngForm" (ngSubmit)="aoSalvar(formulario)">
+  <form #formulario="ngForm" (ngSubmit)="aoSalvar()">
     <div class="form-group">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" required [(ngModel)]="cliente.nome" #nome="ngModel" name="nome" placeholder="Nome Completo" required>
